@@ -1,0 +1,38 @@
+{
+  "files": {
+    "main.css": "/static/css/main.ed73ef40.css",
+    "main.js": "/static/js/main.781bf507.js",
+    "static/media/image.png": "/static/media/image.0f4d24db052036729e6d.png",
+    "static/media/bg.png": "/static/media/bg.c8eaf912864b26bca076.png",
+    "static/media/EventImage.svg": "/static/media/EventImage.0818a681d5023a417e6953aad34f2e55.svg",
+    "static/media/circle.png": "/static/media/circle.2b1a5e92e6455a137241.png",
+    "static/media/aboutus.jpg": "/static/media/aboutus.c4c5c682a821f0645faa.jpg",
+    "static/media/ml.png": "/static/media/ml.aa77d98ffbda7735d94f.png",
+    "static/media/Error.png": "/static/media/Error.3a2a55aac5346c453360.png",
+    "static/media/Projects logo.png": "/static/media/Projects logo.7cff4e9b01d7caa1bad3.png",
+    "static/media/mlsc_shield_new.png": "/static/media/mlsc_shield_new.897464249c85ed4f07c1.png",
+    "static/media/head.ttf": "/static/media/head.9457e865c03a94238142.ttf",
+    "static/media/myanmar-khyay.ttf": "/static/media/myanmar-khyay.9457e865c03a94238142.ttf",
+    "static/media/card.svg": "/static/media/card.84556d76234466988bc493f545ab7145.svg",
+    "static/media/Error4.png": "/static/media/Error4.07ffaca4dc36fc5ae133.png",
+    "static/media/mlsc-logo.png": "/static/media/mlsc-logo.13f9160c49942ec13624.png",
+    "static/media/mlsclogo.png": "/static/media/mlsclogo.f3539e9d4bdef70a799c.png",
+    "static/media/LC.png": "/static/media/LC.7969e8aed43435e96713.png",
+    "static/media/RC.png": "/static/media/RC.d31ef60bc1466a292344.png",
+    "static/media/CrossVector.svg": "/static/media/CrossVector.0c617953eb4ec65e89676e1f5ea198d6.svg",
+    "static/media/cross.svg": "/static/media/cross.ef4f161acb9eae653e1cd7a4dca6d587.svg",
+    "index.html": "/index.html",
+    "static/media/downarrow.svg": "/static/media/downarrow.e8f921fb8b9d4d786b446e68854b0f38.svg",
+    "static/media/uparrow.svg": "/static/media/uparrow.167935cbac621d5b4affa5251b9accfb.svg",
+    "static/media/BlueGradient.svg": "/static/media/BlueGradient.3da3b7e5b1be2ddd486c8e72f99490d1.svg",
+    "static/media/hamburger.svg": "/static/media/hamburger.169140ccb8acb7882367997423a429dd.svg",
+    "static/media/close.svg": "/static/media/close.62e2000bd611d4d96eee07cc69232223.svg",
+    "static/media/line.svg": "/static/media/line.2d9afb3a8a97935c97cee00d65c282cb.svg",
+    "main.ed73ef40.css.map": "/static/css/main.ed73ef40.css.map",
+    "main.781bf507.js.map": "/static/js/main.781bf507.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.ed73ef40.css",
+    "static/js/main.781bf507.js"
+  ]
+}
