@@ -94,30 +94,30 @@ const Sponsors = () => {
                 className={styles.mySwiper}
             >
                 {companyData.map((data) => {
-                        return (
-                            <SwiperSlide>
-                                <div className={styles.carousel1}>
-                                    <ImageHolder data={data} />
-                                    <div className={styles.container2}>
-                                        <h2 classname={styles.sponsorHead}>
-                                            {data.sponsorName}
-                                        </h2>
-                                        <h2 classname={styles.sponsorText}>
-                                            Makeathon 4.0
-                                        </h2>
-                                        <p classname={styles.sponsorText}>
-                                            {data.description}
-                                        </p>
-                                    </div>
+                    return (
+                        <SwiperSlide>
+                            <div className={styles.carousel1}>
+                                <ImageHolder data={data} />
+                                <div className={styles.container2}>
+                                    <h2 className={styles.sponsorHead}>
+                                        {data.sponsorName}
+                                    </h2>
+                                    <h2 className={styles.sponsorText}>
+                                        Makeathon 4.0
+                                    </h2>
+                                    <p className={styles.sponsorText}>
+                                        {data.description}
+                                    </p>
                                 </div>
-                            </SwiperSlide>
-                        );
+                            </div>
+                        </SwiperSlide>
+                    );
                 })}
             </Swiper>
             <div className={styles.whysponsorus}>
                 <h2 className={styles.subheading}> Why Sponsor Us? </h2>
-                    {/* First Para */}
-                  <ul className={styles.listStyle}>
+                {/* First Para */}
+                <ul className={styles.listStyle}>
                     <div className={styles.sponsorPara}>
                         <span className={styles.sponsorText}>Youth Hub:&nbsp;</span>
                         The Youth hub of the organization is a huge reach, as it has
@@ -165,28 +165,77 @@ const Sponsors = () => {
                         that make up a successful team will help you organize
                         various promotional events and learning workshops.
                     </div>
-                  </ul>
+                </ul>
             </div>
             <h1 className={styles.sponsorUsHead}>
                 Want To Sponsor Our Upcoming Event?
             </h1>
             <div className={styles.sponsorForm}>
-              <div className={styles.ctContainer1}>
-                <form action="https://api.web3forms.com/submit" method="POST">
-                  <input type="hidden" name="access_key" value={process.env.API_KEY} />
-                  <input type="text" placeholder="name" name="name" required className={styles.contactField} />
-                  <input type="email" placeholder="example@abc.com" name="email" required className={styles.contactField} />
-                  <textarea name="message" placeholder="leave a message for us? ;)" required className={styles.contactText} ></textarea>
-                  <input type="hidden" name="redirect" value="https://web3forms.com/success" />
-                  <button type="submit" className={styles.submitButton}>Submit!</button>
-                </form>
-              </div> 
-              <div className={styles.ctContainer2}>
-                <img src={shield} className={styles.sheild} />
-              </div>
+                <div className={styles.ctContainer1}>
+                    <form action="https://api.web3forms.com/submit" method="POST" onSubmit={(e)=>{submitForm(e)}}>
+                        <input type="hidden" name="access_key" value={process.env.ACCESS_KEY} />
+                        <input type="text" placeholder="name" name="name" required className={styles.contactField} />
+                        <input type="email" placeholder="example@abc.com" name="email" required className={styles.contactField} />
+                        <textarea name="message" placeholder="leave a message for us? ;)" required className={styles.contactText} ></textarea>
+                        <input type="hidden" name="redirect" value="https://web3forms.com/success" />
+                        <button type="submit" className={styles.submitButton}>Submit!</button>
+                    </form>
+                    <p className="text-base text-center text-gray-500" id="result"></p>
+                </div>
+                <div className={styles.ctContainer2}>
+                    <img src={shield} className={styles.sheild} alt="Logo MLSC" />
+                </div>
             </div>
         </div>
     );
 };
+
+
+
+const submitForm = (e) => {
+    e.preventDefault();
+    var result = document.getElementById("result");
+    var form = document.getElementsByTagName("form")[0];
+    const formData = new FormData(form);
+    var object = {};
+    formData.forEach((value, key) => {
+        object[key] = value;
+    });
+    var json = JSON.stringify(object);
+    result.innerHTML = "Please wait...";
+
+    fetch("https://api.web3forms.com/submit", {
+        method: "POST",
+        headers: {
+            "Content-Type": "application/json",
+            Accept: "application/json"
+        },
+        body: json
+    })
+        .then(async (response) => {
+            let json = await response.json();
+            if (response.status == 200) {
+                result.innerHTML = json.message;
+                result.classList.remove("text-gray-500");
+                result.classList.add("text-green-500");
+            } else {
+                console.log(response);
+                result.innerHTML = json.message;
+                result.classList.remove("text-gray-500");
+                result.classList.add("text-red-500");
+            }
+        })
+        .catch((error) => {
+            console.log(error);
+            result.innerHTML = "Something went wrong!";
+        })
+        .then(function () {
+            form.reset();
+            setTimeout(() => {
+                result.style.display = "none";
+            }, 5000);
+        });
+
+}
 
 export default Sponsors;
